@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="is">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vöruhúsið</title>
+
+    <link rel="stylesheet" href="grid.css">
+    <!-- Breyta styles.css í cssið sem ég bý til -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="grid">
+        <h2>Vörur í körfu</h2>
+
+        <div class="grid__row">
+            <div class="grid__col">
+                <div class="grid__image">
+                    <img>
+                </div>
+            </div>
+            <div class="grid__col">
+                <div>
+                    <h2>Bakpoki</h2>
+                    <p>Þú getur geymt allt sem þú þarft fyrir klifrið í þessum bakpoka.</p>
+                </div>
+                <div>
+                    <h3>49.900 kr.-</h3>
+                    <p>Fjöldi:</p>
+                    <div>
+                        <input type="number">2</input>
+                        <button>
+                            <svg></svg>Uppfæra
+                        </button>
+                        <button>
+                            <svg></svg>Eyða úr körfu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid__row">
+            <div class="grid__col">
+                <div class="grid__image">
+                    <img>
+                </div>
+            </div>
+            <div class="grid__col">
+                <div>
+                    <h2>Kalkpoki</h2>
+                    <p>Þú getur geymt allt sem þú þarft fyrir klifrið í þessum bakpoka.</p>
+                </div>
+                <div>
+                    <h3>4.900 kr.-</h3>
+                    <p>Fjöldi:</p>
+                    <div>
+                        <input type="number">4</input>
+                        <button>
+                            <svg></svg>Uppfæra
+                        </button>
+                        <button>
+                            <svg></svg>Eyða úr körfu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid__sendingaupplysingar">
+            <h2>Sendingarupplýsingar</h2>
+            Nafn:  
+            <input class="nafn" type="text">
+            Heimilisfang:
+            <input class="heimilisfang" type="text">
+            Póstnúmer:
+            <select name="-Velja póstnúmer-">
+
+            </select>
+
+        </div>
+        <div class="grid__greidsluupplysingar">
+            <h2>Greiðsluupplýsingar</h2>
+            Kortanúmer:
+            <input class="kortanumer" type="text">
+            Korthafi:
+            <input class="korthafi" type="text">
+            Gildistími:
+        </div>
+    </div>
+</body>
+
+</html>

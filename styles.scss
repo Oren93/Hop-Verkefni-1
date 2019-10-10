@@ -1,4 +1,5 @@
 @import "scss/config";
+@import "scss/cart_styles";
 
 $black: #000000;
 $white: #fffcf2;
@@ -9,6 +10,7 @@ $blue: #00b7ff;
   padding: 0;
   margin: 0;
 }
+
 
 *,
 *::before,
@@ -55,7 +57,7 @@ main {
     height: 25vh;
 }*/
 
-.header__h1 { 
+.header__h1 {
   text-align: center;
     font-weight: 800;
     font-size: 2.8em;
@@ -123,7 +125,7 @@ main {
 }
 .main__nav li {
   display: inline;
-  padding-left: 3em; 
+  padding-left: 3em;
 }
 .main__nav a {
 	display: inline-block;
