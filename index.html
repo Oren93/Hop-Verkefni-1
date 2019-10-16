@@ -1,5 +1,8 @@
 <!doctype html>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
 <html lang="is">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 
 <head>
   <meta charset="utf-8">
@@ -11,23 +14,153 @@
 </head>
 
 <body>
-  <main>
-    <header class="header">
-        <div class="header__container">
+  <script src="script.js"></script>
+  <header class="header">
+    <h1 class="header__h1">Prílihúsið</h1>
+    <div class="header__container">
+<div class="header__nav__center">
+
+      <!-- <div class="header__nav">
+          <a class="header__nav__left">invisible</a> -->
+      <!-- <div class="header__nav__center"> -->
+
+     
+      <a href="index.html">FORSÍÐA</a>
+      <a href="pages/products.html">VÖRUR</a>
+      <a href="pages/products.html">NÁMSKEIÐ</a>
+      <div class="break"></div>
+      <a href="pages/staff.html">STARFSFÓLK</a>
+      <!-- </div> -->
+      </div>
+      <div class="header__nav__right">
+      <a href="pages/cart.html">
+       
+          <svg enable-background="new 0 0 30.512 24.717" height="24.717px" id="Capa_1" version="1.1"
+            viewBox="0 0 30.512 24.717" width="30.512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path
+              d="M26.818,16.14l3.607-10.796c0.181-0.519,0.044-0.831-0.102-1.037c-0.374-0.527-1.143-0.532-1.292-0.532L8.646,3.771  L8.102,1.19C7.955,0.581,7.521,0,6.646,0H0.917C0.323,0,0,0.278,0,0.833v1.49C0,2.86,0.322,3,0.938,3h4.837l3.702,15.717  c-0.588,0.623-0.908,1.531-0.908,2.378c0,1.864,1.484,3.582,3.38,3.582c1.79,0,3.132-1.677,3.35-2.677h7.21  c0.218,1,1.305,2.717,3.349,2.717c1.863,0,3.378-1.614,3.378-3.475c0-1.851-1.125-3.492-3.359-3.492c-0.929,0-2.031,0.5-2.543,1.25  h-8.859c-0.643-1-1.521-1.31-2.409-1.345L11.943,17h13.479C26.438,17,26.638,16.63,26.818,16.14z M25.883,19.931  c0.701,0,1.27,0.569,1.27,1.27c0,0.701-0.569,1.27-1.27,1.27s-1.271-0.568-1.271-1.27C24.613,20.5,25.182,19.931,25.883,19.931z   M13.205,21.201c0,0.709-0.576,1.286-1.283,1.286c-0.709-0.002-1.286-0.577-1.286-1.286s0.577-1.286,1.286-1.286  C12.629,19.915,13.205,20.492,13.205,21.201z" />
+          </svg>
+        </i> Karfa (6)</a>
+    </div></div>
+
+    <!-- <div class="header__container">
         <h1 class="header__h1">Prílihúsið</h1>
+        
         <ul class="main__nav">
+          <li> </li>
+          <li> </li>
           <li>Vöruhúsið</li>
           <li>FORSÍÐA</li>
           <li>VÖRUR</li>
           <li>STARFSFÓLK</li>
-          <li> Karfa (6)</li>
+          <li><i class="fa fa-shopping-cart"></i> Karfa (6)</li>
+        </ul>
+        </div> -->
+    </div>
+  </header>
+  <main>
+    <div class="index__grid">
+      <div class="img__1">
+        <img class="index__image" src="img/climbing-store.jpg" alt="Inni Buð">
+      </div>
+      <div class="index__grid__topR">
+        <h3>Allar vörurnar</h3>
+        <p>Vöruhúsið hefur allar þær vörur sem þig vantar fyrir klifrið.
+          Skoða vörur</p>
+        <button class="index__btn">Mynd af verslun
+        </button>
+      </div>
+      <div class="index__grid__bottomL">
+        <h3>Besta starfsfólkið</h3>
+        <p>Starfsfólkið okkar hugsar vel um þig.
+          Kynnast starfsfólki</p>
+        <button class="index__btn">Mynd af höndum teymisins</button>
+      </div>
+      <div class="index__grid__bottomR">
+        <img class="index__image" src="img/team.jpg" alt="team">
+      </div>
+    </div>
+  </main>
+  <div class="footer__aligner">
+    <footer class="footer__distributed">
+
+      <div class="footer__left">
+        <h3>Vöruflokkar
+          <!-- <span>Eduonix</span> -->
+        </h3>
+        <div>
+          <p>Nauðsynjavörur</p>
+        </div>
+        <div>
+          <p>Frábærar vörur</p>
+        </div>
+        <div>
+          <p>Ómissandi vörur</p>
+        </div>
+        <div>
+          <p>Ótrúlegar vörur</p>
+        </div>
+        <div>
+          <p>Magnaðar vörur</p>
+        </div>
+        <p class="footer__links">
+      </div>
+
+      <div class="footer__center">
+        <h3>Vöruflokkar</h3>
+        <div>
+          <p>Trylltar vörur</p>
+        </div>
+        <div>
+          <p>Geggjaðar vörur</p>
+        </div>
+        <div>
+          <p>Svakalegar vörur</p>
+        </div>
+        <div>
+          <p>Fáránlegar vörur</p>
+        </div>
+        <div>
+          <p>Klikkaðar vörur</p>
+        </div>
+      </div>
+
+      <div class="footer__right">
+        <h3>Námskeið</h3>
+        <div>
+          <p>V0 - V1 námskeið</p>
+        </div>
+        <div>
+          <p>V2 - V4 námskeið</p>
+        </div>
+        <div>
+          <p>V5 - V7 námskeið</p>
+        </div>
+        <div>
+          <p>Fjallaklifur námskeið</p>
+        </div>
+
+        <!-- <div class="footer-icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+        </div> -->
+      </div>
+      <div class="footer__far__right">
+        <h3>Síður</h3>
+        <ul>
+          <li><a href="pages/products.html">Allar vörur</a></li>
+          <li><a href="pages/staff.html">Starfsfólk</a></li>
+          <li><a href="pages/course.html">Námskeið</a></li>
+          <li><a href="pages/cart.html">Karfa</a></li>
         </ul>
       </div>
-      </div>
-</header>
-    <body>
-      <div>
-      </div>
-    </body>
+      <p>© 2018 Vöruhúsið</p>
+    </footer>
+  </div>
+</body>
 
 </html>

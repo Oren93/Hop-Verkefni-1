@@ -1,5 +1,7 @@
 @import "scss/config";
 @import "scss/cart_styles";
+@import "scss/index_styles";
+@import "scss/grid.css";
 
 $black: #000000;
 $white: #fffcf2;
@@ -11,135 +13,253 @@ $blue: #00b7ff;
   margin: 0;
 }
 
-
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
 
-html { /* stylelint-disable-line */
+html {
+  /* stylelint-disable-line */
   box-sizing: border-box;
   overflow-x: hidden;
-
+  font-size: 16px;
+  font-family: "Open Sans", helvetica, arial, sans-serif;
   // TODO fleiri grunn stillingar
 }
-
-// TODO sækja allar sass skrár
-
-@import "/grid.css";
- * {
-    margin: 0;
-    padding: 0;
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-HEADER-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/*General header design*/
+.header {
+  background: $orange;
+  width: 100%;
+  height: 16rem;
+  /*max-width: 100%;
+   margin: 0 auto;*/
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
 }
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-html {
-    box-sizing: border-box;
-    font-family: 'Open Sans', helvetica, arial, sans-serif;
-    font-size: 16px;
-}
-
-main {
-    margin: 0 auto;
-    max-width: 1450px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-/*.header {
-    text-align: center;
-    background: $orange;
-    font-size: 1.6em;
-    height: 25vh;
-}*/
 
 .header__h1 {
-  text-align: center;
-    font-weight: 800;
-    font-size: 2.8em;
-}
-
-.header ul {
-    list-style: none;
-}
-
-/*.header__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-.header li {
-    color: blue;
-    padding-right: 2em;
-}
-
-.header__container :nth-of-type(5) {
-    align-self: flex-end;
-}*/
-
-/*-------------------------------------------------------*/
-.header {
-	background: $blue;
   width: 100%;
-  height: 25vh;
-	max-width: 100%;
-	padding: 1em;
+  text-align: center;
+  font-weight: 800;
+  font-size: 2.5em;
+}
+
+.header__container {
+  border: dashed blue;
+  margin-left: 0%;
+  display: flex;
+  justify-content: center;
+}
+/*The four centered links*/
+.header__nav__center {
+  border: dashed rgb(0, 255, 85);
+  justify-content: flex-end;
+  width: 75%;
+
+  display: flex;
+  min-height: 1.2em;
+}
+/*the furthest link on the right*/
+.header__nav__right {
+  display: flex;
+  justify-content: flex-end;
+}
+/*reponsiveness of header*/
+@media (max-width: 500px) {
+  .header__container {
+    width: 100vw;
+    font-size: 2vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  .header__nav__center {
+    max-width: 100%;
+  }
+  .header__nav__right {
+    padding-top: 1rem;
+    align-self: center;
+    justify-self: flex-end;
+  }
+}
+@media (min-width: 501px) {
+  .header__nav__center {
+    border: dashed rgb(0, 255, 85);
+    flex-wrap: wrap;
+     display: flex;
+    width: 60vw;
+    margin-left: auto ;
+    
+   justify-content: space-around;
+   align-content: center;
+    min-height: 1.2em;
+  }
+  .header__nav__center :last-child {
+   
+    align-self: center;
+    justify-self: center;
+  
+  }
+  .break {  
+  flex-basis: 100vw;}
+
+  .header__container {
+     font-size: 100%;
+     font-size: 2.5vw;
+  }
+  .header__nav__right {
+    margin-left: auto;
+  }
+}
+@media (min-width: 800px) {
+   .break {  
+  flex-basis: 0;
+  /*canceling the 2 lines layout of center link bar*/
+   }
+  .header__container {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    min-width: 800px;
+  }
+}
+
+/*To define space between the links*/
+.header__nav__center :nth-of-type(n) {
+  margin-left: 3rem;
+}
+/*applies for links under all conditions*/
+.header a {
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+}
+/* unvisited link */
+.header a:link {
+  color: $black;
+}
+
+/* visited link */
+a:visited {
+  color: $black;
+}
+/* mouse over link */
+.header a:hover {
+  color: $white;
+}
+
+/* selected link */
+.header a:active {
+  text-decoration: underline;
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=FOOTER=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+footer {
+  position:/*Vantar Skoða hvaða er best*/ initial;
+  bottom: 0;
+  color: $white;
+}
+
+@media (max-height: 800px) {
+  footer {
+    position: static;
+  }
+  header {
+    padding-top: 40px;
+  }
+  main {
+    grid-template-columns: 1;
+  }
+}
+.footer__aligner {
+  background-color: $blue;
+  box-sizing: border-box;
+  padding: 50px 0 60px 0;
+  margin-top: 80px;
+  display: flex;
   margin: 0 auto;
+  justify-content: center;
 }
 
-/**
- * By using display: flex
- * Logo and nav are in 2 cols
- * align-items make them
- * vertically centered
- * justify-content distribute
- * horizontal spaces around
- * and flex-wrap break the
- * things in two lines in
- * small screens
- */
-
-
-.main__nav {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-  flex-wrap: wrap;
-
+.footer__distributed {
+  width: 1200px;
+  text-align: center;
+  font: bold 16px sans-serif;
+  display: flex;
+  justify-content: space-between;
 }
 
-/**
- * The followings are to
- * make things more
- * clean and airy
- * and contents centered
- */
-.main__nav {
-	margin: 1em 0 .5em;
-	text-align: center;
-}
-.main__nav li {
-  display: inline;
-  padding-left: 3em;
-}
-.main__nav a {
-	display: inline-block;
-	padding: 0.5em 1.5em;
+.footer__distributed .footer__left,
+.footer__distributed .footer__center,
+.footer__distributed .footer__right,
+.footer__distributed .footer__far__right {
+  display: inline-block;
+  vertical-align: top;
 }
 
-/**
- * Space-around become
- * Space-between to
- * distribute space
- * between the flex-items
- */
-@media (min-width: 960px) {
-	.main-header .container {
-		justify-content: space-between;
-	}
+/* Footer left */
+
+.footer__distributed .footer__left {
+  width: 24%;
+}
+
+.footer__distributed h3 {
+  color: $black;
+  font: normal 36px "Cookie", cursive;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer__distributed .footer__center {
+  width: 24%;
+}
+
+.footer__distributed .footer__center p {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+/* Footer Right */
+
+.footer__distributed .footer__right {
+  width: 24%;
+}
+
+/*footer far right*/
+.footer__distributed .footer__far__right {
+  width: 24%;
+}
+.footer__distributed .footer__far__right ul {
+  list-style: none;
+}
+.footer__distributed .footer__far__right a {
+  text-decoration: none;
+  color: $white;
+}
+
+/* Here is the code for Responsive Footer */
+
+@media (max-width: 880px) {
+  .footer__distributed .footer__left,
+  .footer__distributed .footer__center,
+  .footer__distributed .footer__right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer__distributed .footer__center i {
+    margin-left: 0;
+  }
 }
