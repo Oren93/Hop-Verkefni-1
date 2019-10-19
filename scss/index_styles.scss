@@ -5,31 +5,26 @@ $blue: #00b7ff;
 
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Main-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
-/*---Header link with underline to haelp with page navigation---*/
-/*.header__nav__center :nth-of-type(1) { 
-  text-decoration: underline;
-}
-==============================================================================*/
 main {
+  padding: 0;
   margin: 0 auto;
   max-width: 1200px;
 }
+.auto-grid {
+  --auto-grid-min-size: 400px;
 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
+}
 .index__grid {
   display: grid;
-  justify-content: center;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: max(25rem) max(25rem);
   grid-template-areas:
     "topL topR"
     "bottomL bottomR";
 }
-/*.main__grid > div IRRELEVANT FOR NOW{
-  overflow: hidden;
-  position: relative;
-  font-size: 1.5em;
-  
-}*/
 
 .index__grid :nth-child(n) {
   display: flex;
@@ -37,17 +32,20 @@ main {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  
 }
 
- .index__image {
- object-fit: cover;
+.index__img {
+  width: 100%;
+  max-height: 100%;
+  border: limegreen dashed;
+}
+
+.index__image {
+  object-fit: contain;
   max-width: 100%;
   height: 100%;
-  display: none;
- }
+}
 
- 
 .index__grid__topL {
   grid-area: topL;
 }
@@ -55,104 +53,51 @@ main {
 .index__grid__topR {
   background: $white;
   grid-area: topR;
+  max-height: 70%;
+  padding-left: 1rem;
 }
 
 .index__grid__bottomL {
   background: $white;
   grid-area: bottomL;
+  padding-left: 1rem;
+  max-height: 70%;
 }
 
 .index__grid__bottomR {
   grid-area: bottomR;
+  max-height: 40rem;
   background: #fffcf2;
 }
 
 .index__btn {
-  border: 0.3em solid $black;
+  border: none;
   border-radius: 0.8em;
   background: $blue;
-  padding: 1em 3em 1em 3em;
-  font-size: 1.5em;
+  padding: 1rem 3rem 1rem 3rem;
+  font-size: 1rem;
 }
 
-/*.header__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+@media (max-width: 799px) {
+  .index__grid {
+    padding-bottom: 20vw;
+    grid-template-columns: 100%;
+    grid-template-rows: 50vw 67vw 50vw 67vw;
+    grid-template-areas:
+      "topR"
+      "topL"
+      "bottomL"
+      "bottomR";
+  }
+  .index__grid :nth-child(2),
+  .index__grid :nth-child(3) {
+    padding-top: 2rem;
+  }
+  .index__grid__topR,
+  .index__grid__bottomL {
+    max-height: 100%;
+  }
+  .index__grid {
+    padding-bottom: 10rem;
+  }
 }
-
-.header li {
-    color: blue;
-    padding-right: 2em;
-}
-
-.header__container :nth-of-type(5) {
-    align-self: flex-end;
-}*/
-
-/*-------------------------------------------------------*/
-
-/**
- * By using display: flex
- * Logo and nav are in 2 cols
- * align-items make them
- * vertically centered
- * justify-content distribute
- * horizontal spaces around
- * and flex-wrap break the
- * things in two lines in
- * small screens
- */
-
-/*align-items: center;
-
-  justify-content: center;
-   justify-content: space-between;
-position: absolute;
-  
-  
-  flex-wrap: wrap;*/
-
-/*.main__nav  :first-child {
-margin-right: auto;
-font-size: 30px;
-flex: 1;
-flex: 1;  
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  border: 1px dashed red;*/
-
-/*}
-.main__nav :nth-child(n+1) {
-margin-left: auto;
-flex: 1;
-font-size: 18px;
- flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px dashed red;
-}
-.main__nav :last-child {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  border: 1px dashed red;*/ /*
-font-size: 20px;
-margin-left: auto;
-flex: 0;
-}*/
-
-/*.main__nav li {
- 
-  display: inline-block;
-  padding-left: 2em;
-}*/
-
-/*.list__item {
- 
- margin-left: auto;
-  
-}*/

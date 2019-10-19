@@ -18,124 +18,26 @@ $blue: #00b7ff;
 *::after {
   box-sizing: inherit;
 }
+* {
+  box-sizing: border-box;
+}
 
 html {
-  /* stylelint-disable-line */
-  box-sizing: border-box;
-  overflow-x: hidden;
+  width: 100%;
   font-size: 16px;
   font-family: "Open Sans", helvetica, arial, sans-serif;
   // TODO fleiri grunn stillingar
 }
-/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-HEADER-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+ul {
+  /*Applies for all lists (Shold really be default by HTML, so oldschool)*/
+  list-style-type: none;
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-HEADER-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 /*General header design*/
-.header {
-  background: $orange;
-  width: 100%;
-  height: 16rem;
-  /*max-width: 100%;
-   margin: 0 auto;*/
-  padding: 1em;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 1.5rem;
-}
 
-.header__h1 {
-  width: 100%;
-  text-align: center;
-  font-weight: 800;
-  font-size: 2.5em;
-}
 
-.header__container {
-  border: dashed blue;
-  margin-left: 0%;
-  display: flex;
-  justify-content: center;
-}
-/*The four centered links*/
-.header__nav__center {
-  border: dashed rgb(0, 255, 85);
-  justify-content: flex-end;
-  width: 75%;
-
-  display: flex;
-  min-height: 1.2em;
-}
-/*the furthest link on the right*/
-.header__nav__right {
-  display: flex;
-  justify-content: flex-end;
-}
-/*reponsiveness of header*/
-@media (max-width: 500px) {
-  .header__container {
-    width: 100vw;
-    font-size: 2vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-  }
-  .header__nav__center {
-    max-width: 100%;
-  }
-  .header__nav__right {
-    padding-top: 1rem;
-    align-self: center;
-    justify-self: flex-end;
-  }
-}
-@media (min-width: 501px) {
-  .header__nav__center {
-    border: dashed rgb(0, 255, 85);
-    flex-wrap: wrap;
-     display: flex;
-    width: 60vw;
-    margin-left: auto ;
-    
-   justify-content: space-around;
-   align-content: center;
-    min-height: 1.2em;
-  }
-  .header__nav__center :last-child {
-   
-    align-self: center;
-    justify-self: center;
-  
-  }
-  .break {  
-  flex-basis: 100vw;}
-
-  .header__container {
-     font-size: 100%;
-     font-size: 2.5vw;
-  }
-  .header__nav__right {
-    margin-left: auto;
-  }
-}
-@media (min-width: 800px) {
-   .break {  
-  flex-basis: 0;
-  /*canceling the 2 lines layout of center link bar*/
-   }
-  .header__container {
-    width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    min-width: 800px;
-  }
-}
-
-/*To define space between the links*/
-.header__nav__center :nth-of-type(n) {
-  margin-left: 3rem;
-}
 /*applies for links under all conditions*/
 .header a {
   transition: 0.2s ease-in-out;
@@ -160,6 +62,96 @@ a:visited {
   text-decoration: underline;
 }
 
+.header a {
+  text-decoration: none;
+ }
+
+.header {
+  background: #ff5000;
+  width: 100%;
+  height: 16rem;
+  padding: 1em;
+}
+
+.header__h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+  font-size: 2.5em;
+  margin-bottom: 1.2rem;
+}
+
+.header__container {
+  font-size: 1rem;
+  max-width: 1200px;
+  border: darkgreen;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ". centerNav cart" 
+                        ". centerNewLine .";
+}
+
+.header__nav__center {
+  grid-area: centerNav;
+}
+
+.header__nav__center li {
+  float: left;
+  padding-top: 0.2rem;
+  text-align: center;
+  border: 1px solid black;
+  display: inline-block;
+  height: 1.7rem;
+  width: 25%;
+}
+
+.header__nav__right {
+  border: darkgreen;
+  grid-area: cart;
+  margin-left: auto;
+}
+
+.currentPage {
+  text-decoration: underline;
+}
+
+/*reponsiveness of header*/
+
+@media (max-width: 500px) {
+  /*smaller edges*/
+  .header__container {
+    grid-template-columns: 10% 80% 10%;
+  }
+  /*cart drops down to a new line*/
+  .header__nav__right {
+    border: darkgreen;
+    grid-area: centerNewLine;
+    margin-right: auto;
+    padding-top: 1rem;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 501px) {
+ /*first 3 links expand to drop the rorth down to a new line*/
+  .header__nav__center li {
+    width: 33%;
+  }
+
+  .header__nav__center ul :nth-child(4) {
+    width: 100%;
+  }
+}
+
+@media (min-width: 800px) {
+/*Re-applying span of centeral links*/
+  .header__nav__center ul :nth-child(n) {
+    width: 25%;
+  }
+}
+
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=FOOTER=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
 footer {
@@ -168,47 +160,18 @@ footer {
   color: $white;
 }
 
-@media (max-height: 800px) {
-  footer {
-    position: static;
-  }
-  header {
-    padding-top: 40px;
-  }
-  main {
-    grid-template-columns: 1;
-  }
-}
 .footer__aligner {
   background-color: $blue;
   box-sizing: border-box;
   padding: 50px 0 60px 0;
   margin-top: 80px;
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
+    margin: 0 auto;
 }
 
 .footer__distributed {
-  width: 1200px;
+  max-width: 1200px;
   text-align: center;
   font: bold 16px sans-serif;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer__distributed .footer__left,
-.footer__distributed .footer__center,
-.footer__distributed .footer__right,
-.footer__distributed .footer__far__right {
-  display: inline-block;
-  vertical-align: top;
-}
-
-/* Footer left */
-
-.footer__distributed .footer__left {
-  width: 24%;
 }
 
 .footer__distributed h3 {
@@ -217,49 +180,8 @@ footer {
   margin: 0;
 }
 
-/* Footer Center */
-
-.footer__distributed .footer__center {
-  width: 24%;
-}
-
-.footer__distributed .footer__center p {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0;
-}
-
-/* Footer Right */
-
-.footer__distributed .footer__right {
-  width: 24%;
-}
-
-/*footer far right*/
-.footer__distributed .footer__far__right {
-  width: 24%;
-}
-.footer__distributed .footer__far__right ul {
-  list-style: none;
-}
-.footer__distributed .footer__far__right a {
-  text-decoration: none;
-  color: $white;
-}
 
 /* Here is the code for Responsive Footer */
 
-@media (max-width: 880px) {
-  .footer__distributed .footer__left,
-  .footer__distributed .footer__center,
-  .footer__distributed .footer__right {
-    display: block;
-    width: 100%;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-
-  .footer__distributed .footer__center i {
-    margin-left: 0;
-  }
+@media (max-width: 500px) {
 }
