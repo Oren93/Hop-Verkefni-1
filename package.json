@@ -1,7 +1,11 @@
 {
   "name": "hop-verkefni-1",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Verkefnið felst í því að smíða vef eftir forskrift.",
+=======
+  "description": "Hopverkefni1",
+>>>>>>> 87e07e77324fd7329df77814d4ef862cae6326f8
   "main": "index.js",
   "scripts": {
     "browser-sync": "browser-sync start --server --files index.html styles.css",
@@ -13,15 +17,28 @@
     "type": "git",
     "url": "git+https://github.com/Oren93/Hop-Verkefni-1.git"
   },
+<<<<<<< HEAD
   "author": "Atli",
+=======
+  "author": "Maggi",
+>>>>>>> 87e07e77324fd7329df77814d4ef862cae6326f8
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Oren93/Hop-Verkefni-1/issues"
   },
   "homepage": "https://github.com/Oren93/Hop-Verkefni-1#readme",
+<<<<<<< HEAD
   "dependencies": {
     "node-sass": "^4.12.0"
   },
   "devDependencies": {},
+=======
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  },
+>>>>>>> 87e07e77324fd7329df77814d4ef862cae6326f8
   "keywords": []
 }

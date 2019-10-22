@@ -1,4 +1,12 @@
 @import "scss/config";
+@import "scss/cart_styles";
+@import "scss/index_styles";
+@import "scss/grid.css";
+
+$black: #000000;
+$white: #fffcf2;
+$orange: #ff5000;
+$blue: #00b7ff;
 
 * {
   padding: 0;
@@ -10,14 +18,174 @@
 *::after {
   box-sizing: inherit;
 }
-
-html { /* stylelint-disable-line */
+* {
   box-sizing: border-box;
-  overflow-x: hidden;
+}
 
+html {
+  width: 100%;
+  font-size: 16px;
+  font-family: "Open Sans", helvetica, arial, sans-serif;
   // TODO fleiri grunn stillingar
 }
 
+ul {
+  /*Applies for all lists (Shold really be default by HTML, so oldschool)*/
+  list-style-type: none;
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-HEADER-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+/*General header design*/
 
 
+/*applies for links under all conditions*/
+.header a {
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+}
+/* unvisited link */
+.header a:link {
+  color: $black;
+}
+
+/* visited link */
+a:visited {
+  color: $black;
+}
+/* mouse over link */
+.header a:hover {
+  color: $white;
+}
+
+/* selected link */
+.header a:active {
+  text-decoration: underline;
+}
+
+.header a {
+  text-decoration: none;
+ }
+
+.header {
+  background: #ff5000;
+  width: 100%;
+  height: 16rem;
+  padding: 1em;
+}
+
+.header__h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+  font-size: 2.5em;
+  margin-bottom: 1.2rem;
+}
+
+.header__container {
+  font-size: 1rem;
+  max-width: 1200px;
+  border: darkgreen;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ". centerNav cart" 
+                        ". centerNewLine .";
+}
+
+.header__nav__center {
+  grid-area: centerNav;
+}
+
+.header__nav__center li {
+  float: left;
+  padding-top: 0.2rem;
+  text-align: center;
+  border: 1px solid black;
+  display: inline-block;
+  height: 1.7rem;
+  width: 25%;
+}
+
+.header__nav__right {
+  border: darkgreen;
+  grid-area: cart;
+  margin-left: auto;
+}
+
+.currentPage {
+  text-decoration: underline;
+}
+
+/*reponsiveness of header*/
+
+@media (max-width: 500px) {
+  /*smaller edges*/
+  .header__container {
+    grid-template-columns: 10% 80% 10%;
+  }
+  /*cart drops down to a new line*/
+  .header__nav__right {
+    border: darkgreen;
+    grid-area: centerNewLine;
+    margin-right: auto;
+    padding-top: 1rem;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 501px) {
+ /*first 3 links expand to drop the rorth down to a new line*/
+  .header__nav__center li {
+    width: 33%;
+  }
+
+  .header__nav__center ul :nth-child(4) {
+    width: 100%;
+  }
+}
+
+@media (min-width: 800px) {
+/*Re-applying span of centeral links*/
+  .header__nav__center ul :nth-child(n) {
+    width: 25%;
+  }
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=FOOTER=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+footer {
+  position:/*Vantar Skoða hvaða er best*/ initial;
+  bottom: 0;
+  color: $white;
+}
+
+.footer__aligner {
+  background-color: $blue;
+  box-sizing: border-box;
+  padding: 50px 0 60px 0;
+  margin-top: 80px;
+    margin: 0 auto;
+}
+
+.footer__distributed {
+  max-width: 1200px;
+  text-align: center;
+  font: bold 16px sans-serif;
+}
+
+.footer__distributed h3 {
+  color: $black;
+  font: normal 36px "Cookie", cursive;
+  margin: 0;
+}
+
+
+/* Here is the code for Responsive Footer */
+
+<<<<<<< HEAD
 // TODO sækja allar sass skrár
+=======
+@media (max-width: 500px) {
+}
+>>>>>>> 87e07e77324fd7329df77814d4ef862cae6326f8
