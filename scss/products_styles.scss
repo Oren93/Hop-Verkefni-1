@@ -1,0 +1,80 @@
+/*-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-= products page design =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+$black: #000000;
+$white: #fffcf2;
+$orange: #ff5000;
+$blue: #00b7ff;
+$pageSize: 1200px;
+
+.products__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.products__card {
+  border: #005bc4 dashed;
+  padding: 2em 0 2em 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.products__card input {
+  flex: 1;
+}
+
+.products__card h2 {    
+  margin-bottom: 1.5rem;
+}
+
+.product__card__bottom {
+  display: flex;
+  justify-content: stretch;
+}
+
+.products__card button {
+  margin-left: 0.5rem;
+  width: auto;
+  height: 2rem;
+}
+
+.products__card svg {
+  height: 0.8rem;
+}
+
+.product__description {
+  margin: 1rem 0 1rem 0;
+}
+
+.product__image {
+  position: relative;
+  bottom: 0;
+  margin-bottom: 1rem;
+  border: limegreen dashed;
+}
+.product__image img {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  max-height: 100%;
+  border: limegreen dashed;
+}
+
+@media (max-width: 500px) {
+  .products__card {
+    width: 96%;
+  }
+}
+
+@media (min-width: 501px) {
+  .products__card {
+    width: 48%;
+  }
+}
+
+@media (min-width: 801px) {
+  .products__card {
+    width: 31%;
+  }
+}
