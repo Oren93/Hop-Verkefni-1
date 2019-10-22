@@ -10,31 +10,31 @@ main {
   margin: 0 auto;
   max-width: 1200px;
 }
-.auto-grid {
-  --auto-grid-min-size: 400px;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
-  grid-gap: 1rem;
-}
 .index__grid {
+  margin-top: 2em;
   display: grid;
-  grid-template-columns: 50% 50%;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: max(25rem) max(25rem);
   grid-template-areas:
     "topL topR"
     "bottomL bottomR";
 }
 
-.index__grid :nth-child(n) {
+.index__grid :nth-child(2),
+.index__grid :nth-child(3) {
+  font-size: 2rem;
+   max-height: 33vw;
   display: flex;
-  /*max-height: 50%;*/
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .index__img {
+  position: relative;
+  bottom: 0;
   width: 100%;
   max-height: 100%;
   border: limegreen dashed;
@@ -42,8 +42,10 @@ main {
 
 .index__image {
   object-fit: contain;
-  max-width: 100%;
-  height: 100%;
+   width: 100%;
+    height: auto;
+    position:absolute;
+    top:0;
 }
 
 .index__grid__topL {
@@ -53,7 +55,6 @@ main {
 .index__grid__topR {
   background: $white;
   grid-area: topR;
-  max-height: 70%;
   padding-left: 1rem;
 }
 
@@ -61,13 +62,10 @@ main {
   background: $white;
   grid-area: bottomL;
   padding-left: 1rem;
-  max-height: 70%;
 }
 
 .index__grid__bottomR {
   grid-area: bottomR;
-  max-height: 40rem;
-  background: #fffcf2;
 }
 
 .index__btn {
@@ -78,10 +76,12 @@ main {
   font-size: 1rem;
 }
 
-@media (max-width: 799px) {
+@media only screen and (max-width: 799px) {
   .index__grid {
+    justify-content: center;
     padding-bottom: 20vw;
-    grid-template-columns: 100%;
+    gap: 1rem;
+    grid-template-columns: 96%;
     grid-template-rows: 50vw 67vw 50vw 67vw;
     grid-template-areas:
       "topR"
@@ -95,9 +95,22 @@ main {
   }
   .index__grid__topR,
   .index__grid__bottomL {
-    max-height: 100%;
+    min-height: 100%;
+   
   }
   .index__grid {
     padding-bottom: 10rem;
+  }
+/*.index__grid h3 {
+      color: #00b7ff;
+     font-size: 0.1rem;
+  }
+  .index__grid p {
+      color: #00b7ff;
+     font-size: 0.1rem;
+  }*/
+  .index__grid__bottomL__box {
+    height: auto;
+    color: #ff5000;
   }
 }
