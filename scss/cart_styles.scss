@@ -1,5 +1,64 @@
+/*-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-= cart page design =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+$black: #000000;
+$white: #fffcf2;
+$orange: #ff5000;
+$blue: #00b7ff;
+$pageSize: 1200px;
 
-body{
-    background-color: blanchedalmond;
+.cart__image {
+  display: flex;
+  width: 100%;
+}
+.cart__image img {
+  width: 100%;
 }
 
+.cart__itemss {
+  margin: auto;
+  width: 96%;
+  border: #000000 dashed;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.cart__itemss h2,
+.cart__itemss h3 {
+  margin: 1rem 0 1rem 0;
+}
+
+.cart__buttons input {
+    border: 0.15rem solid $black;
+    width: 20%;
+    border-radius: 0.5rem;
+}
+
+
+.cart__first__button {
+    width: 20%;
+     border-radius: 0.5rem ;
+    margin: 0 1rem 0 1rem;
+     border: 0.15rem solid $black;
+}
+
+.cart__second__button {
+   border-radius: 0.5rem;
+    width: 30%; 
+    border: 0.15rem solid $black;
+}
+
+.cart__itemss svg {
+  height: 0.8rem;
+}
+
+.cart__buttons {
+    width: 100%;
+    border: #000000 dashed;
+  display: flex;
+  align-content: stretch;
+  flex-direction: row;
+  overflow: hidden;
+  height: 3rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* жжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжжж*/
