@@ -4,12 +4,15 @@
 @import "scss/grid.css";
 @import "scss/staff_styles";
 @import "scss/products_styles";
+@import "scss/cart_styles.scss";
+
 
 $black: #000000;
 $white: #fffcf2;
 $orange: #ff5000;
 $blue: #00b7ff;
 $pageSize: 1200px;
+$gutter: 20px;
 
 * {
   padding: 0;
@@ -68,10 +71,11 @@ ul {
 }
 
 .header {
-  background: #ff5000;
+  background: $orange;
   width: 100%;
-  height: 16rem;
+  min-height: 10rem;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .header__h1 {
@@ -162,7 +166,7 @@ ul {
 }
 
 footer {
-  position:/*Vantar Skoða hvaða er best*/ initial;
+  position: initial;
   bottom: 0;
   color: $white;
 }
@@ -172,7 +176,7 @@ footer {
   min-height: 30vh;
   background-color: $blue;
   box-sizing: border-box;
-  padding: 50px 0 60px 0;
+  padding: 50px 0 60px $gutter;
   margin-top: 3rem;
 }
 
@@ -180,19 +184,17 @@ footer {
   color: $white;
   max-width: $pageSize;
   margin: 0 auto;
-  font: bold 16px sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 .footer__distributed > div {
-  width: 23%;
+  width: 25%;
   margin-bottom: 0.8rem;
 }
 
 .footer__distributed h3 {
   color: $black;
-  font: normal 36px "Cookie", cursive;
   margin-bottom: 1.2rem;
 }
 
@@ -201,13 +203,13 @@ footer {
 }
 
 .footer__distributed  li> a {
-  color: #fffcf2;
+  color: $white;
   text-decoration: none;
 }
 
 /* Responsiveness of Footer */
 @media only screen and (max-width: 799px) {
   .footer__distributed > div {
-    width: 47%;
+    width: 50%;
   }
 }
