@@ -4,6 +4,7 @@ $white: #fffcf2;
 $orange: #ff5000;
 $blue: #00b7ff;
 $pageSize: 1200px;
+$gutter: 20px;
 
 .staff__container {
   margin-left: -$gutter;
@@ -23,30 +24,31 @@ $pageSize: 1200px;
   grid-area: karitas;
 }
 .starf__karitas .flip__card__front {
-  background-image: url("/img/Karítas.jpg");}
+  background-image: url("img/Karítas.jpg");
+}
 
 .starf__ulfur {
   grid-area: ulfur;
 }
 .starf__ulfur .flip__card__front {
-  background-image: url("/img/Úlfur\ Arnar.jpg");}
+  background-image: url("img/Úlfur\ Arnar.jpg");
+}
 
 .starf__bergros {
   position: relative;
   grid-area: bergos;
 }
 .starf__bergros .flip__card__front {
-  background-image: url("/img/Bergrós.jpg");}
+  background-image: url("img/Bergrós.jpg");
+}
 
 .starf__hannes {
   grid-area: hannes;
 }
 .starf__hannes .flip__card__front {
-  background-image: url("/img/Hannes.jpg");}
+  background-image: url("img/Hannes.jpg");
+}
 
-/*.starf {
-  position: relative;
-}*/
 .flip__card {
   height: 100%;
 }
@@ -56,12 +58,12 @@ $pageSize: 1200px;
 }
 
 .flip__card:hover {
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
   transform: rotateY(180deg);
 }
 .flip__card {
   display: inline-block;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
   transform-style: preserve-3d;
 }
 .flip__card__front,
@@ -80,43 +82,46 @@ $pageSize: 1200px;
   background-size: contain;
 }
 
-.flip__card__back h1 {
+.flip__card__back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.flip__card__back h2 {
   margin-bottom: 10rem;
+  text-align: center;
 }
 .flip__card__back p {
   text-align: center;
 }
 
 @media (min-width: 800px) {
-  .staff__container >div {
+  .staff__container > div {
     width: 48%;
   }
-.staff__container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  .staff__container {
 
- /* grid-template-columns: 0.5 * $pageSize;
-  grid-template-rows: 0.75*$pageSize 0.75*$pageSize;
-  grid-template-areas:
-    "karitas ulfur"
-    "bergos hannes";*/
-}  
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 0.75 * $pageSize 0.75 * $pageSize;
+    grid-template-areas:
+      "karitas ulfur"
+      "bergos hannes";
+  }
 
-.flip__card__front,
-.flip__card__back {
-  width: 50vw;
-  max-width: 0.5 * $pageSize;
-  height: 75vw;
-  max-height: 0.75 * $pageSize;
-}
-.flip__card:hover .flip__card__front {
-  display: none;
-}
-.flip__card:hover .flip__card__back {
-  display: inline-block;
-}
-
+  .flip__card__front,
+  .flip__card__back {
+    width: 50vw;
+    max-width: 0.5 * $pageSize - 0.5 *$gutter;
+    height: 75vw;
+    max-height: 0.75 * $pageSize;
+  }
+  .flip__card:hover .flip__card__front {
+    display: none;
+  }
+  /*.flip__card:hover .flip__card__back {
+    display: inline-block;
+  }*/
 }
 
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/

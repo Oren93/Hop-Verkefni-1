@@ -1,11 +1,11 @@
-@import "scss/config";
+
 @import "scss/cart_styles";
 @import "scss/index_styles";
 @import "scss/grid.css";
 @import "scss/staff_styles";
 @import "scss/products_styles";
 @import "scss/cart_styles.scss";
-
+@import "scss/course_styles.scss";
 
 $black: #000000;
 $white: #fffcf2;
@@ -68,6 +68,7 @@ ul {
 /* selected link */
 .header a:active {
   text-decoration: underline;
+  color: $black;
 }
 
 .header {
@@ -89,7 +90,6 @@ ul {
 .header__container {
   font-size: 1rem;
   max-width: $pageSize;
-  border: darkgreen;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 25% 50% 25%;
@@ -107,14 +107,12 @@ ul {
   float: left;
   padding-top: 0.2rem;
   text-align: center;
-  border: 1px solid black;
   display: inline-block;
   height: 1.7rem;
   width: 25%;
 }
 
 .header__nav__right {
-  border: darkgreen;
   grid-area: cart;
   margin-left: auto;
 }
@@ -133,7 +131,6 @@ ul {
   }
   /*cart drops down to a new line*/
   .header__nav__right {
-    border: darkgreen;
     grid-area: centerNewLine;
     margin-right: auto;
     padding-top: 1rem;
@@ -175,8 +172,7 @@ footer {
   width: 100%;
   min-height: 30vh;
   background-color: $blue;
-  box-sizing: border-box;
-  padding: 50px 0 60px $gutter;
+  padding: 40px 0 30px $gutter;
   margin-top: 3rem;
 }
 
@@ -217,7 +213,7 @@ footer {
 }
 
 .© {
-  color: $black;
+  color: $black;;
 }
 
 /* Responsiveness of Footer */

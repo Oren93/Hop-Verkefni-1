@@ -5,6 +5,10 @@ $blue: #00b7ff;
 $gutter: 20px;
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Main-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
+button { /* For all the buttons in the site */
+  transition: 0.2s ease-in-out;
+}
+
 main {
   padding: 0 $gutter 0 $gutter;
   margin: 0 auto;
@@ -25,7 +29,7 @@ main {
 .index__grid :nth-child(2),
 .index__grid :nth-child(3) {
   font-size: 1.5rem;
-   max-height: 33vw;
+  max-height: 33vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -41,17 +45,17 @@ main {
 
 .index__image {
   object-fit: contain;
-   width: 100%;
-    height: auto;
-    position:absolute;
-    top:0;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
 }
 
 .index__grid__topL {
   grid-area: topL;
 }
 
-.index__grid__topR { 
+.index__grid__topR {
   grid-area: topR;
 }
 
@@ -69,6 +73,10 @@ main {
   background: $blue;
   padding: 1rem 3rem 1rem 3rem;
   font-size: 1rem;
+}
+
+.index__btn:hover {
+  background-color: $orange;
 }
 
 @media only screen and (max-width: 799px) {
@@ -91,6 +99,11 @@ main {
   .index__grid__topR,
   .index__grid__bottomL {
     min-height: 100%;
-   
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .index__grid {
+    padding-top: $gutter;
+    margin: 0 -$gutter 0 -$gutter;
   }
 }

@@ -6,6 +6,18 @@ $blue: #00b7ff;
 $pageSize: 1200px;
 $gutter: 20px;
 
+/* media for aligning content to grid, it is not the only way, but works good */
+@media (max-width: 1200px) {
+  .products__container {
+   margin: 0;
+  }
+} 
+@media (min-width: 1200px) {
+.products__container {
+    margin-right: -$gutter;
+    margin-left: -$gutter;} 
+  }
+
 .products__container {
   display: flex;
   flex-wrap: wrap;
@@ -52,14 +64,12 @@ $gutter: 20px;
   position: relative;
   bottom: 0;
   margin-bottom: 1rem;
-  border: limegreen dashed;
 }
 .product__image img {
   position: relative;
   bottom: 0;
   width: 100%;
   max-height: 100%;
-  border: limegreen dashed;
 }
 .product__card__bottom >:nth-of-type(n) {
   border-radius: 0.4rem;
