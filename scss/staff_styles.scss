@@ -1,4 +1,3 @@
-
 /*-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-= staff page design =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 $black: #000000;
 $white: #fffcf2;
@@ -7,56 +6,118 @@ $blue: #00b7ff;
 $pageSize: 1200px;
 
 .staff__container {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-perspective: 1000px;
+  margin-left: -$gutter;
+  display: grid;
+  gap: $gutter;
+  grid-template-columns: $pageSize;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "karitas"
+    "ulfur"
+    "bergos"
+    "hannes";
 }
 
+/*defining locations of each card*/
+.starf__karitas {
+  grid-area: karitas;
+}
+.starf__karitas .flip__card__front {
+  background-image: url("/img/Karítas.jpg");}
+
+.starf__ulfur {
+  grid-area: ulfur;
+}
+.starf__ulfur .flip__card__front {
+  background-image: url("/img/Úlfur\ Arnar.jpg");}
+
+.starf__bergros {
+  position: relative;
+  grid-area: bergos;
+}
+.starf__bergros .flip__card__front {
+  background-image: url("/img/Bergrós.jpg");}
+
+.starf__hannes {
+  grid-area: hannes;
+}
+.starf__hannes .flip__card__front {
+  background-image: url("/img/Hannes.jpg");}
+
+/*.starf {
+  position: relative;
+}*/
 .flip__card {
-  background-color: transparent;
-  width: 590px;
-  height: 885px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.flip__card__inner {
-/*  width: 100%;
   height: 100%;
-text-align: center;
- */
-  display: flex;
-  align-content: center;
-  transition:  ease-in-out 0.3s;
-  transform-style: preserve-3d;
 }
-
-.flip__card:hover .flip__card__inner {
-  transform: rotateY(180deg);
-}
-.flip__card__back {
- display: flex;
-  align-content: space-between;
-}
-
-.flip__card__front, .flip__card__back  {
-  position: fixed;
-  backface-visibility: hidden;
-}
-.flip__card__front img {
-    width: 100%;
-}
-
-.flip__card__front {
-  background-color: #bbb;
-  color: black;
-}
-
 .flip__card__back {
   background-color: $white;
-  color: $black;
   transform: rotateY(180deg);
+}
+
+.flip__card:hover {
+  transition-duration: 0.5s;
+  transform: rotateY(180deg);
+}
+.flip__card {
+  display: inline-block;
+  transition-duration: 0.5s;
+  transform-style: preserve-3d;
+}
+.flip__card__front,
+.flip__card__back {
+  width: 100vw;
+  max-width: $pageSize;
+  height: 150vw;
+  max-height: 1.5 * $pageSize;
+  color: $black;
+  font-size: 2rem;
+  line-height: 5rem;
+}
+.flip__card__front {
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: contain;
+}
+
+.flip__card__back h1 {
+  margin-bottom: 10rem;
+}
+.flip__card__back p {
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  .staff__container >div {
+    width: 48%;
+  }
+.staff__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+ /* grid-template-columns: 0.5 * $pageSize;
+  grid-template-rows: 0.75*$pageSize 0.75*$pageSize;
+  grid-template-areas:
+    "karitas ulfur"
+    "bergos hannes";*/
+}  
+
+.flip__card__front,
+.flip__card__back {
+  width: 50vw;
+  max-width: 0.5 * $pageSize;
+  height: 75vw;
+  max-height: 0.75 * $pageSize;
+}
+.flip__card:hover .flip__card__front {
+  display: none;
+}
+.flip__card:hover .flip__card__back {
+  display: inline-block;
+}
+
 }
 
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+

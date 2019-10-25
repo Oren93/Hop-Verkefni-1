@@ -14,7 +14,7 @@ $gutter: 20px;
 .cart__image {
   width: 100%;
 }
-img {
+.cart__image img {
   max-width: 100%;
 }
 .cart__button {
@@ -107,10 +107,6 @@ img {
 .manudur {
   width: 5rem;
 }
-input {
-  border: solid $black 1px;
-  border-radius: 0.5rem;
-}
 
 .cart__container,
 .cart__container2 {
@@ -192,8 +188,14 @@ input {
   flex-direction: row;
 }
 
-input {
+.cart__container input,
+ .cart__container2 input, {
   height: 2em;
+  
+}
+.cart__items input {
+  border: solid $black 1px;
+  border-radius: 0.5rem;
 }
 
 

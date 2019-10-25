@@ -207,6 +207,19 @@ footer {
   text-decoration: none;
 }
 
+.footer__aligner a {
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.footer__aligner a:hover {
+  color: $black;
+}
+
+.© {
+  color: $black;
+}
+
 /* Responsiveness of Footer */
 @media only screen and (max-width: 799px) {
   .footer__distributed > div {
