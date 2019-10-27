@@ -4,7 +4,9 @@
 Þetta hópverkefni er unnið í námskeiðinu Vefforritun 1 af:
 
 -Oren Raz, orr3@hi.is, dæmatímahópur 2.
+
 -Magnúsi Þór Valdimarssyni, mtv3@hi.is, dæmatímahópur 5. 
+
 -Atla Frey Kristjánssyni, afk5@hi.is, dæmatímahópur 3.
 
 
