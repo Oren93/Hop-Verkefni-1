@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Oren93/Hop-Verkefni-1#readme",
   "dependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.1"
   },
   "devDependencies": {},
   "keywords": []
